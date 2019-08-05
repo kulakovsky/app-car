@@ -1,0 +1,30 @@
+<div class="app-cars__button">
+
+    <button id="add" mat-button (click)="openCarDialogButtonClick()">New car</button>
+
+</div>
+
+<mat-accordion>
+
+    <mat-expansion-panel *ngFor="let group of carsGroup">
+
+        <mat-expansion-panel-header>
+
+            <mat-panel-title class="app-cars__category">
+
+                {{group.title}} ({{group.cars.length}})
+
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div class="app-car-details" *ngFor="let car of group.cars">
+
+            <app-car-details [car]="car"
+                             (deleteCar$)="onDeletingCar(car)"></app-car-details>
+
+        </div>
+
+    </mat-expansion-panel>
+
+</mat-accordion>

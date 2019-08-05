@@ -1,0 +1,51 @@
+<div class="app-cars__details">
+
+    <div class="app-car-details__delete">
+
+        <button mat-icon-button (click)="onDeletingButtonClick()">
+
+            <mat-icon>close</mat-icon>
+
+        </button>
+
+    </div>
+
+    <div>
+
+        <mat-form-field class="app-car-details__input">
+
+            <input matInput
+                   placeholder="Car title"
+                   [value]="car.title">
+
+        </mat-form-field>
+
+    </div>
+
+    <div>
+
+        <mat-form-field class="app-car-details__input">
+
+            <input matInput
+                   placeholder="Car description"
+                   [value]="car.description">
+
+        </mat-form-field>
+
+    </div>
+
+    <div>
+
+        <mat-form-field class="app-car-details__input">
+
+            <textarea matInput
+                      placeholder="Car response"
+                      [value]="car.response"></textarea>
+
+        </mat-form-field>
+
+    </div>
+
+
+
+</div>

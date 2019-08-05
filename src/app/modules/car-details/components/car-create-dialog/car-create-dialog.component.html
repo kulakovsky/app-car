@@ -1,0 +1,92 @@
+<div class="app-dialog-header">
+
+    <div class="app-dialog-header__title">Create new Car</div>
+
+    <div class="app-dialog-header__action">
+
+        <button mat-icon-button tabindex="-1" [mat-dialog-close]>
+
+            <mat-icon>close</mat-icon>
+
+        </button>
+
+    </div>
+
+</div>
+
+<form [formGroup]="formGroup" class="app-dialog-actions" (ngSubmit)="onFormSubmit()">
+
+    <div>
+
+        <mat-form-field>
+
+            <mat-select formControlName="categoryCtrl"
+                        [compareWith]="compareFn"
+                        placeholder="Category">
+
+                <mat-option *ngFor="let category of categories" [value]="category">
+
+                    {{category.title}}
+
+                </mat-option>
+
+            </mat-select>
+
+        </mat-form-field>
+
+    </div>
+
+
+    <div>
+
+        <mat-form-field>
+
+            <input formControlName="titleCtrl" matInput placeholder="Car title">
+
+        </mat-form-field>
+
+    </div>
+
+    <div>
+
+        <mat-form-field>
+
+            <input formControlName="descriptionCtrl" matInput placeholder="Car description">
+
+        </mat-form-field>
+
+    </div>
+
+    <div>
+
+        <mat-form-field class="app-car-details__input">
+
+            <textarea matInput
+                      formControlName="responseCtrl"
+                      placeholder="Car response"></textarea>
+
+        </mat-form-field>
+
+    </div>
+
+    <div>
+
+        <button mat-flat-button
+                color="primary"
+                [disabled]="formGroup.invalid">
+
+            Save
+
+        </button>
+
+        <button class="app-dialog-footer__button"
+                mat-flat-button
+                [mat-dialog-close]>
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</form>
